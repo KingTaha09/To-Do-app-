@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do Ultra+</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>📝 To-Do Ultra+</h1>
+    <div class="top-controls">
+      <button id="darkToggle" title="Dark/Light Mode">🌗</button>
+      <button id="nextBg" title="Wechsel Hintergrund">🎨</button>
+    </div>
+  </header>
+
+  <section class="add-area">
+    <input id="taskInput" type="text" placeholder="Neue Aufgabe ..." autocomplete="off">
+    <input id="timeInput" type="time">
+    <select id="pointsSelect" title="Punkte für Aufgabe">
+      <option value="5">+5 XP</option>
+      <option value="10" selected>+10 XP</option>
+      <option value="20">+20 XP</option>
+    </select>
+    <button id="addBtn">＋</button>
+  </section>
+
+  <section class="controls">
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Alle</button>
+      <button class="filter-btn" data-filter="open">Offen</button>
+      <button class="filter-btn" data-filter="done">Erledigt</button>
+    </div>
+    <input id="searchInput" type="text" placeholder="🔍 Suche...">
+  </section>
+
+  <section class="status">
+    <div class="progress-wrap">
+      <div id="progress-bar"></div>
+    </div>
+    <div class="stats">
+      <div class="xp">XP: <span id="xp">0</span> (<span id="level">Lv 1</span>)</div>
+      <div class="daily">Heute: <span id="todayCount">0</span> erledigt</div>
+    </div>
+  </section>
+
+  <ul id="taskList" class="task-list"></ul>
+
+  <footer class="footer">
+    <div class="avatar" id="avatar">🙂</div>
+    <div class="date-time" id="dateTime"></div>
+    <div class="buttons">
+      <button id="exportBtn" title="Exportiere Aufgaben">Export</button>
+      <button id="clearBtn" title="Alles löschen">Reset</button>
+    </div>
+  </footer>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
